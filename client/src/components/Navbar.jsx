@@ -17,8 +17,8 @@ export default function Navbar() {
       <div
         className={`navbar__items_container flex flex-row absolute w-full items-center justify-center gap-16`}
       >
-        <div className={`navbar__items pointer-events-none`}>asf</div>
-        <div className={`navbar__items`}>afsd</div>
+        <div className={`navbar__items pointer-events-none`}>ACCOUNT</div>
+        <div className={`navbar__items`}>INVEST</div>
       </div>
       <div className={`navbar__logo_container  pl-[265px]`}>LOGO</div>
       <div className={`navbar__cta_container flex flex-row pr-[265px] gap-5`}>
