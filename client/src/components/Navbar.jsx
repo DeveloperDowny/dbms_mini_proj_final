@@ -2,6 +2,8 @@ import styles from "../Global";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import orange from "@mui/material/colors/orange";
+import { bigLogo } from "../assets";
+// import { testLogo } from "../../";
 
 export default function Navbar() {
   const theme = createTheme({
@@ -12,15 +14,17 @@ export default function Navbar() {
 
   return (
     <div
-      className={`navbar ${`flex flex-row justify-between bg-white text-alternateBlack pt-4 pb-4 shadow-md`} items-center`}
+      className={`navbar ${`flex flex-row justify-between bg-white text-alternateBlack pt-4 pb-4 shadow-md`} items-center h-min`}
     >
       <div
         className={`navbar__items_container flex flex-row absolute w-full items-center justify-center gap-16`}
       >
-        <div className={`navbar__items pointer-events-none`}>ACCOUNT</div>
-        <div className={`navbar__items`}>INVEST</div>
+        <div className={`navbar__item ${styles.} allsides-5`}>ACCOUNT</div>
+        <div className={`navbar__item allsides-5`}>INVEST</div>
       </div>
-      <div className={`navbar__logo_container  pl-[265px]`}>LOGO</div>
+      <div className={`navbar__logo_container  pl-[265px]  h-[55px]`}>
+        <img className="h-full" src={bigLogo} alt="" />
+      </div>
       <div className={`navbar__cta_container flex flex-row pr-[265px] gap-5`}>
         <div
           className={`cta_container__login_btn   bg-white border-2 border-primary text-primary  ${styles.ctaText} transition-all  hover:bg-primary hover:text-onPrimary`}
