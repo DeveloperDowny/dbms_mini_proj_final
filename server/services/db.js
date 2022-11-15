@@ -1,9 +1,9 @@
-import mysql from 'mysql2/promise';
-import config from '/config';
+import mysql from "mysql2/promise";
+import config from "../config.js";
 
 async function query(sql, params) {
   const connection = await mysql.createConnection(config.db);
-  const [results, ] = await connection.execute(sql, params);
+  const [results] = await connection.execute(sql, params);
 
   return results;
 }
@@ -11,4 +11,4 @@ async function query(sql, params) {
 //   query
 // }
 
-export default query;
+export { query };

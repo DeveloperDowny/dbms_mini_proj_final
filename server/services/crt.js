@@ -1,20 +1,20 @@
-import db from'./db';
-import helper from'./helper';
-import config from './config';
+import * as db from "./db.js";
+import * as helper from "../helper.js";
+import config from "../config.js";
 
-async function getMultiple(page = 1){
+async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT id, name, 
-    FROM st_info LIMIT ${offset},${config.listPerPage}`
+    `SELECT *
+    FROM programming_languages LIMIT ${offset}, ${config.listPerPage};`
   );
   const data = helper.emptyOrRows(rows);
-  const meta = {page};
+  const meta = { page };
 
   return {
     data,
-    meta
-  }
+    meta,
+  };
 }
 
 // module.exports = {
