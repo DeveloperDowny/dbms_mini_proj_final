@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 //import crt from'../services/crt';
 // import crt from "../services/crt.js";
-import getMultiple from "../services/crt.js";
+import getMultiple from "../services/transaction.js";
 /* GET programming languages. */
 router.get("/", async function (req, res, next) {
   try {

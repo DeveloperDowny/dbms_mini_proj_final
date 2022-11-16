@@ -1,24 +1,19 @@
-import express from 'express';
-
+import express from "express";
 const router = express.Router();
-
-const user = [
-    {
-       
-        "Customer_Name" : "Dhanashree Otari",
-        "Customer_ID"   : 2021300086,
-        "Password"      :"*******"
-        
-    }
-
-    
-]
-//all the routes are starting with / users 
-router.get('/',(req,res) => {
-    console.log(user);
-    
-    res.send(user);
-    
+//import crt from'../services/crt';
+// import crt from "../services/crt.js";
+import getMultiple from "../services/sign_up.js";
+/* GET programming languages. */
+router.get("/", async function (req, res, next) {
+  try {
+    // res.json(await crt.getMultiple(req.query.page));
+    res.json(await getMultiple(req.query.page));
+  } catch (err) {
+    console.error(`Error while getting programming languages `, err.message);
+    next(err);
+  }
 });
 
-export default router;// so that index.js could use it
+//module.exports = router;
+
+export default router;
