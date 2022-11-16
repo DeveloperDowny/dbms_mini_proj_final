@@ -17,7 +17,7 @@ app.use(
     extended: true,
   })
 );
-app.use("/st_info", crtRouter);
+app.use("/crt", crtRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
