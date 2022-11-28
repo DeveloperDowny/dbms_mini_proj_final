@@ -1,5 +1,6 @@
 import express from 'express';
 
+
 const router = express.Router();
 
 const user = [
@@ -21,5 +22,8 @@ router.get('/',(req,res) => {
     
 });
 
+
+
+ 
 export default router;// so that index.js could use it
 
