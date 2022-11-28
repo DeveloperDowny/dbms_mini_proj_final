@@ -19,8 +19,12 @@ export default function Navbar() {
       <div
         className={`navbar__items_container flex flex-row absolute w-full items-center justify-center gap-16`}
       >
-        <div className={`navbar__item ${styles.} allsides-5`}>ACCOUNT</div>
-        <div className={`navbar__item allsides-5`}>INVEST</div>
+        <div className={`navbar__item allsides-5 `}>
+          <p className={styles.navbar_item}>ACCOUNT</p>
+        </div>
+        <div className={`navbar__item allsides-5`}>
+          <p className={styles.navbar_item}>INVEST</p>
+        </div>
       </div>
       <div className={`navbar__logo_container  pl-[265px]  h-[55px]`}>
         <img className="h-full" src={bigLogo} alt="" />
