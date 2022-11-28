@@ -4,6 +4,9 @@ import sign_inusersRoutes from "./routes/sign_in.js";
 import sign_upusersRoutes from "./routes/sign_up.js";
 import crtRouter from "./routes/sign_up.js";
 import transactionRouter from "./routes/transaction.js";
+//import transactionhistRouter from "./routes/transactionhist.js";
+import trans_histRouter from "./routes/trans_hist.js";
+
 
 
 const app = express(); // initialise express application all depended on the variable app
@@ -21,6 +24,8 @@ app.use(
 );
 app.use("/sign_up", sign_upusersRoutes);
 app.use("/transaction", transactionRouter);
+//app.use("/transactionhist", transactionhistRouter);
+app.use("/trans_hist", trans_histRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
