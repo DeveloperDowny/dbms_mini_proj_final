@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar__item {
+  cursor: pointer;
+}
+
 /* .allsides-5 {
   background: linear-gradient(#CD5511 0 0) var(--d, 0) 0,
     linear-gradient(#CD5511 0 0) 0 var(--d, 0),

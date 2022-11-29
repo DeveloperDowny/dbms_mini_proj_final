@@ -29,8 +29,8 @@ input[type=email], input[type=password],input[type=text],input[type=password]  s
     color: red;
  }
 
-.error{
-    color:red;
+.error2{
+    color:rgb(170, 25, 3);
     margin: 10px;
 }
 
@@ -53,10 +53,8 @@ input[type=email], input[type=password],input[type=text],input[type=password]  s
     line-height: 20px;
     padding: 6px 16px;
     position: relative;
+    left: 20px;
     text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
     white-space: nowrap;
@@ -86,4 +84,25 @@ input[type=email], input[type=password],input[type=text],input[type=password]  s
   .button-3:active {
     background-color: #298e46;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  }
+
+
+  .main2{
+    background-color: #F9D3BD;
+  padding: 40px;
+  height: 600px;
+  }
+
+  .full2{
+    position:fixed;
+    left: 350px;
+    width:50%; 
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   display: flex; 
+    flex-direction: column; 
+   background-color:  #F19059;
+   border-radius: 1%;
+   padding: 10px;
+  
   }

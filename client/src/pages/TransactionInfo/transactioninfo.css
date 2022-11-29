@@ -1,19 +1,21 @@
-input[type=email], input[type=password],input[type=text],input[type=number]  select {
-    width: 40%;
+input[type=email], input[type=password],input[type=text],input[type=number] select {
+    width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block grid;
-    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    border: 1px solid #a34104;
  }
  input[type=submit] {
-    width: 100%;
+  position: relative;
+  top:20px;
+    width: 50%;
+    height: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
  }
@@ -28,18 +30,43 @@ input[type=email], input[type=password],input[type=text],input[type=number]  sel
  #expenseForm span {
     color: red;
  }
+.full{
+  position:relative;
+  left: 350px;
+  width:50%; 
+  height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ display: flex; 
+  flex-direction: column; 
+ background-color:  #F19059;
+ border-radius: 1%;
+ padding: 10px;
+
+}
+
+h1{
+text-align: center;
+text-emphasis-color:#CD5511 ;
+}
 
 .error{
     color:red;
     margin: 10px;
 }
 
-.label{
-    text-align: left;
+.main{
+background-color: #F9D3BD;
+  height: 650px;
+
 }
+
  .button-3 {
+  position: relative;
+  left: 280px;
+  top:30px;
+  width:30%;
     appearance: none;
-    background-color: #2ea44f;
+    background-color: #CD5511;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -48,15 +75,11 @@ input[type=email], input[type=password],input[type=text],input[type=number]  sel
     cursor: pointer;
     display: inline-block;
     font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe U";
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 20px;
     padding: 6px 16px;
-    position: relative;
     text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
     white-space: nowrap;
@@ -68,7 +91,7 @@ input[type=email], input[type=password],input[type=text],input[type=number]  sel
   }
   
   .button-3:hover {
-    background-color: #2c974b;
+    background-color: #2c8997;
   }
   
   .button-3:focus {
