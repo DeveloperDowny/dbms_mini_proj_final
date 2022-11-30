@@ -18,7 +18,7 @@ export default function Navbar({
 
   return (
     <div
-      className={`navbar ${`flex flex-row justify-between bg-white text-alternateBlack pt-4 pb-4 shadow-md`} items-center  fixed w-full h-[87px] z-5`}
+      className={`navbar ${`flex flex-row justify-between bg-[white] text-alternateBlack pt-4 pb-4 shadow-md`} items-center  fixed w-full h-[87px] z-5`}
     >
       <div
         className={`navbar__items_container flex flex-row absolute w-full items-center justify-center gap-3`}
@@ -84,7 +84,7 @@ export default function Navbar({
           Login
         </a>
         <a
-          href="signup"
+          href="/signup"
           className={`cta_container__signup_btn ${styles.ctaText}`}
         >
           {/* <p className={`pointer-events-none`}> Sign Up</p> */}
