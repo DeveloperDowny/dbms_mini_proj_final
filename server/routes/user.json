@@ -1,9 +1,0 @@
-const user = [
-    {
-        "Customer_Name" : "Dhanashree Otari",
-        "Customer_ID"   : 2021300086,
-        "Password"      :"*******"
-        
-        
-    }
-]
