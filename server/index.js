@@ -2,7 +2,7 @@ import express from "express"; // express is ready to use
 import bodyParser from "body-parser"; // will allow post coming request bodies
 import sign_inusersRoutes from "./routes/sign_in.js";
 import sign_upusersRoutes from "./routes/sign_up.js";
-import crtRouter from "./routes/sign_up.js";
+//import crtRouter from "./routes/sign_up.js";
 import transactionRouter from "./routes/transaction.js";
 //import transactionhistRouter from "./routes/transactionhist.js";
 import trans_histRouter from "./routes/trans_hist.js";
