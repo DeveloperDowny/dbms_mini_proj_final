@@ -4,6 +4,9 @@ import sign_inusersRoutes from "./routes/sign_in.js";
 import sign_upusersRoutes from "./routes/sign_up.js";
 import crtRouter from "./routes/sign_up.js";
 import transactionRouter from "./routes/transaction.js";
+
+import transactionHistory from "./routes/trans_history.js";
+
 import { login } from "./controllers/index.js";
 import mRoutes from "./routes/mRoutes.js";
 import multer from "multer";
@@ -27,7 +30,10 @@ app.use(
 );
 
 app.use(upload.array());
-// app.use("/sign_up", sign_upusersRoutes);
+app.use("/sign_up", sign_upusersRoutes);
+app.use("/sign_in", sign_inusersRoutes);
+app.use("/transfer", transactionRouter);
+app.use("/transactions");
 // app.use("/transaction", transactionRouter);
 
 // app.use((err, req, res, next) => {
