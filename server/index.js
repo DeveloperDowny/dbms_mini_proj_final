@@ -2,8 +2,11 @@ import express from "express"; // express is ready to use
 import bodyParser from "body-parser"; // will allow post coming request bodies
 import sign_inusersRoutes from "./routes/sign_in.js";
 import sign_upusersRoutes from "./routes/sign_up.js";
-import crtRouter from "./routes/sign_up.js";
+//import crtRouter from "./routes/sign_up.js";
 import transactionRouter from "./routes/transaction.js";
+//import transactionhistRouter from "./routes/transactionhist.js";
+import trans_histRouter from "./routes/trans_hist.js";
+
 
 import transactionHistory from "./routes/trans_history.js";
 
@@ -31,6 +34,7 @@ app.use(
 
 app.use(upload.array());
 app.use("/sign_up", sign_upusersRoutes);
+<<<<<<< HEAD
 app.use("/sign_in", sign_inusersRoutes);
 app.use("/transfer", transactionRouter);
 app.use("/transactions");
@@ -49,6 +53,18 @@ app.use("/transactions");
 // export const transactions = (formData) => API.get("/transactions", formData);
 
 app.use("/", mRoutes);
+=======
+app.use("/transaction", transactionRouter);
+//app.use("/transactionhist", transactionhistRouter);
+app.use("/trans_hist", trans_histRouter);
+
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  console.error(err.message, err.stack);
+  res.status(statusCode).json({ message: err.message });
+  return;
+});
+>>>>>>> dhanashree
 
 app.listen(PORT, () =>
   console.log(`Server Running on port : http://localhost:${PORT}`)
