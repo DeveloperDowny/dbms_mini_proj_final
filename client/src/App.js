@@ -20,29 +20,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import theme from "./theme";
 import Login from "./pages/Login/Login";
 import TransactionForm from "./pages/TransactionForm/TransactionForm";
-// import { extendTheme } from "@chakra-ui/react";
-
-// 2. Call `extendTheme` and pass your custom values
-// const theme = extendTheme({
-//   colors: {
-//     brand: {
-//       100: "#f7fafc",
-//       // ...
-//       900: "#1a202c",
-//     },
-//   },
-//   initialColorMode: "light",
-//   useSystemColorMode: false,
-// });
 
 export default function App() {
-  // const { colorMode, toggleColorMode } = useColorMode();
-  // useEffect(() => {
-  //   return () => {
-  //     toggleColorMode();
-  //   };
-  // }, []);
-
   const [whichToHover, setWhichToHover] = useState("none");
   const [whichSelected, setWhichSelected] = useState("none");
 
@@ -84,10 +63,9 @@ export default function App() {
       />
     );
   });
-  // const [whichToShowHover, setWhichToShowHover] = useState("none");
+
   const mRef = useRef(null);
-  // const { isOpen, onToggle } = useDisclosure();
-  // return <TransactionHistory />;
+
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
@@ -97,7 +75,6 @@ export default function App() {
             setWhichToHover={setWhichToHover}
             setWhichSelected={setWhichSelected}
             whichToHover={whichToHover}
-            // temp={onToggle}
           />
 
           <div className="pt-[87px] bg-[#F9D3BD]">
@@ -127,13 +104,7 @@ export default function App() {
                   <TransactionHistory setWhichSelected={setWhichSelected} />
                 }
               />
-              <Route
-                path="/account/transfer"
-                element={
-                  // <TransactionInfo setWhichSelected={setWhichSelected} />
-                  <TransactionForm />
-                }
-              />
+              <Route path="/account/transfer" element={<TransactionForm />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/workInProgress" element={<> </>} />

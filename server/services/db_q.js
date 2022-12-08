@@ -9,8 +9,4 @@ async function getUser(email) {
   return data;
 }
 
-// module.exports = {
-//   getMultiple
-// }
-
 export default getUser;

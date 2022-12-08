@@ -1,25 +1,45 @@
+import bcrypt from "bcryptjs/dist/bcrypt.js";
 import express from "express";
 import * as db from "../services/db.js";
 
 const router = express.Router();
 
-router.get("/", async function (req, res, next) {
+router.post("/", async function (req, res, next) {
   try {
     const reqJson = req.body;
-    // await db.query(
-    //   `insert into cust_acc values (${reqJson["cust_name"]}, '${reqJson["cust_email_id_id"]}',${reqJson["acc_num"]},${reqJson["encoded_password"]},${reqJson["balance"]})`
-    // );
+    console.log(reqJson);
+
     const result = await db.query(
       `select * from cust_acc where cust_email_id = '${reqJson["cust_email_id"]}'`
     );
-    // if encoded pass saved is equal to latest hash, authenticate
-    res.json(result);
+
+    if (result.length === 0) {
+      res.json({
+        status: 0,
+        message:
+          "Given email is not associated with any accout. Sign up instead.",
+      });
+      return;
+    }
+
+    if (
+      await bcrypt.compare(
+        result[0]["encoded_password"],
+        reqJson["encoded_password"]
+      )
+    ) {
+      res.json({ status: 0, message: "Invalid Password" });
+      return;
+    }
+
+    res.json({
+      status: 1,
+      acc_num: result[0]["acc_num"],
+    });
   } catch (err) {
     console.error(`Error while getting programming languages `, err.message);
     next(err);
   }
 });
-
-//module.exports = router;
 
 export default router;

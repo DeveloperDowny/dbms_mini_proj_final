@@ -8,9 +8,19 @@ import {
   Icon,
   IconProps,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { is_authenticated } from "../../data/constants";
 import styles from "../../Global";
 
 export default function Home() {
+  // useEffect(() => {
+  //   localStorage.setItem(is_authenticated, "false");
+  //   console.log(localStorage.getItem(is_authenticated));
+  //   console.log(localStorage.getItem("is_authenticated"));
+
+  //   return () => {};
+  // }, []);
+
   return (
     <Container
       maxW={"5xl"}

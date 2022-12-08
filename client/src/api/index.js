@@ -7,4 +7,4 @@ export const logIn = (formData) => API.post("/sign_in", formData);
 export const signUp = (formData) => API.post("/sign_up", formData);
 
 export const transfer = (formData) => API.post("/transfer", formData);
-export const transactions = (formData) => API.get("/transactions", formData);
+export const transactions = (formData) => API.post("/transactions", formData);

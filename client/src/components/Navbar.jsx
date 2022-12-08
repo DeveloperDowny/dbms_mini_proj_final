@@ -2,7 +2,6 @@ import styles from "../Global";
 import { createTheme } from "@mui/material/styles";
 import orange from "@mui/material/colors/orange";
 import { bigLogo } from "../assets";
-// import { testLogo } from "../../";
 
 export default function Navbar({
   whichSelected,
@@ -22,12 +21,9 @@ export default function Navbar({
     >
       <div
         className={`navbar__items_container flex flex-row absolute w-full items-center justify-center gap-3`}
-        // gap-16
       >
         <div
-          // className={` ${whichSelected == "account" ? "" : ""} navbar__item allsides-5  border-[4px] border-primary`}
           className={` ${
-            // whichSelected == "account" || whichToHover == "account"
             (whichToHover == "account" && whichToHover == whichSelected) ||
             (whichSelected == "account" && whichToHover == "none")
               ? "border-[4px] border-primary"
@@ -35,15 +31,12 @@ export default function Navbar({
           } navbar__item   `}
           onMouseEnter={() => {
             setWhichToHover("account");
-            // setWhichSelected("account");
           }}
         >
           <p className={`${styles.navbar_item} `}>ACCOUNT</p>
         </div>
         <div
-          // className={`navbar__item allsides-5`}
           className={` ${
-            // whichSelected == "invest" || whichToHover == "invest"
             (whichToHover == "invest" && whichToHover == whichSelected) ||
             (whichSelected == "invest" && whichToHover == "none")
               ? "border-[4px] border-primary"
@@ -51,15 +44,12 @@ export default function Navbar({
           } navbar__item   `}
           onMouseEnter={() => {
             setWhichToHover("invest");
-            // setWhichSelected("invest");
           }}
         >
           <p className={styles.navbar_item}>INVEST</p>
         </div>
         <div
-          // className={`navbar__item allsides-5 `}
           className={` ${
-            // whichSelected == "about" || whichToHover == "about"
             (whichToHover == "about" && whichToHover == whichSelected) ||
             (whichSelected == "about" && whichToHover == "none")
               ? "border-[4px] border-primary"
@@ -67,7 +57,6 @@ export default function Navbar({
           } navbar__item   `}
           onMouseEnter={() => {
             setWhichToHover("about");
-            // setWhichSelected("about");
           }}
         >
           <p className={styles.navbar_item}>ABOUT</p>

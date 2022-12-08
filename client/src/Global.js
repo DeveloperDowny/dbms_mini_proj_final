@@ -5,13 +5,6 @@ let styles = {
   navbar_item: "mx-4 my-2",
   linksText: "font-IBMPlex  text-white text-lg",
   headerText: "",
-  // superContainer: "pt-[87px]",
 };
-
-// styles = {
-//   ...styles,
-//   ctaPrimary: `${styles.ctaText} bg-primary`,
-//   ctaSecondary: styles.ctaText,
-// };
 
 export default styles;

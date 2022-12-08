@@ -2,17 +2,17 @@ import express from "express"; // express is ready to use
 import bodyParser from "body-parser"; // will allow post coming request bodies
 import sign_inusersRoutes from "./routes/sign_in.js";
 import sign_upusersRoutes from "./routes/sign_up.js";
-//import crtRouter from "./routes/sign_up.js";
-import transactionRouter from "./routes/transaction.js";
+import crtRouter from "./routes/sign_up.js";
+import transactionRouter from "./routes/transfer.js";
 //import transactionhistRouter from "./routes/transactionhist.js";
-import trans_histRouter from "./routes/trans_hist.js";
-
+import trans_histRouter from "./routes/trans_hist_2.js";
 
 import transactionHistory from "./routes/trans_history.js";
 
 import { login } from "./controllers/index.js";
 import mRoutes from "./routes/mRoutes.js";
 import multer from "multer";
+import cors from "cors";
 
 const app = express(); // initialise express application all depended on the variable app
 const upload = multer();
@@ -33,11 +33,11 @@ app.use(
 );
 
 app.use(upload.array());
+app.use(cors());
 app.use("/sign_up", sign_upusersRoutes);
-<<<<<<< HEAD
 app.use("/sign_in", sign_inusersRoutes);
 app.use("/transfer", transactionRouter);
-app.use("/transactions");
+app.use("/transactions", trans_histRouter);
 // app.use("/transaction", transactionRouter);
 
 // app.use((err, req, res, next) => {
@@ -53,18 +53,6 @@ app.use("/transactions");
 // export const transactions = (formData) => API.get("/transactions", formData);
 
 app.use("/", mRoutes);
-=======
-app.use("/transaction", transactionRouter);
-//app.use("/transactionhist", transactionhistRouter);
-app.use("/trans_hist", trans_histRouter);
-
-app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
-  console.error(err.message, err.stack);
-  res.status(statusCode).json({ message: err.message });
-  return;
-});
->>>>>>> dhanashree
 
 app.listen(PORT, () =>
   console.log(`Server Running on port : http://localhost:${PORT}`)

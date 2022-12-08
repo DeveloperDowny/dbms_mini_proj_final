@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   Flex,
   Heading,
@@ -19,13 +20,43 @@ import {
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 
+import bcrypt from "bcryptjs";
+import { logIn } from "../../api";
+import { useNavigate } from "react-router-dom";
+import { cust_acc_num } from "../../data/constants";
+
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowClick = () => setShowPassword(!showPassword);
+
+  const handleSubmit = async (e) => {
+    console.log("easy");
+    console.log(e);
+
+    const hashedPassword = e.target.password.value;
+    const result = await logIn({
+      cust_email_id: e.target.email.value,
+      encoded_password: hashedPassword,
+    });
+    console.log("result");
+    console.log(result);
+
+    if (result["data"]["status"] === 1) {
+      console.log("status 1");
+      localStorage.setItem("is_authenticated", "true");
+      localStorage.setItem("cust_email_id", e.target.email.value);
+      localStorage.setItem(cust_acc_num, result["data"]["acc_num"]);
+
+      console.log(localStorage.getItem("cust_email_id"));
+      console.log(localStorage.getItem("sfd"));
+      navigate("/");
+    }
+  };
 
   return (
     <Flex
@@ -45,7 +76,12 @@ const Login = () => {
         <Avatar bg="#CD5511" />
         <Heading color="#CD5511">Welcome</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
-          <form>
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+              e.preventDefault();
+            }}
+          >
             <Stack
               spacing={4}
               p="1rem"
@@ -57,18 +93,18 @@ const Login = () => {
               <FormLabel variant={"contained"}>Email</FormLabel>
               <Input
                 type="email"
+                name="email"
                 placeholder="email address"
                 style={{
-                  // display: "flex",
                   width: "100%",
                 }}
               />
               <FormLabel variant={"contained"}>Password</FormLabel>
               <Input
                 type="password"
+                name="password"
                 placeholder="password"
                 style={{
-                  // display: "flex",
                   width: "100%",
                 }}
               />

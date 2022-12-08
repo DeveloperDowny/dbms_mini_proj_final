@@ -24,7 +24,7 @@ const InputField = ({
         id="temp"
         style={{
           zIndex: "9",
-          // textAlign: "center",
+
           position: "absolute",
           top: "16px",
           left: "2.5rem",
@@ -37,7 +37,6 @@ const InputField = ({
             duration: 0.1,
           });
           e.target.nextElementSibling.focus();
-          // document.getElementsByTagName("input")[0].focus();
         }}
       >
         {phToTitle}
